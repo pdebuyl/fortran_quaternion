@@ -1,3 +1,7 @@
+! This file is part of fortran_quaternion
+! Author: Pierre de Buyl http://pdebuyl.be/
+! License: BSD 3-clause
+
 module quaternion
   implicit none
 

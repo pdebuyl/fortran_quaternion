@@ -1,3 +1,7 @@
+! This file is part of fortran_quaternion
+! Author: Pierre de Buyl http://pdebuyl.be/
+! License: BSD 3-clause
+
 program test_base
   use quaternion
   use tester
