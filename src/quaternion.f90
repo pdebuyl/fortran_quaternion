@@ -1,11 +1,6 @@
 module quaternion
   implicit none
 
-  type quaternion_t
-     double precision :: v(3)
-     double precision :: s
-  end type quaternion_t
-
 contains
 
   pure function qnorm(q) result(n)
