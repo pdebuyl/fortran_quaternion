@@ -1,0 +1,3 @@
+[submodule "fortran_tester"]
+	path = fortran_tester
+	url = https://github.com/pdebuyl/fortran_tester
