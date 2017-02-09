@@ -84,6 +84,9 @@ program test_base
   q1 = [1, 0, 0, 1]
   call test% assert_close(qnorm(q1), sqrt(2.d0))
 
+  q1 = [1d0, 5d0, -3d0, 0.1d0]
+  call test% assert_close(qnorm(qnormalize(q1)), 1.d0)
+
   q1 = [2, 0, 0, 1]
   q2 = [-2, 0, 0, 1]
   call test% assert_close(qconj(q1), q2)

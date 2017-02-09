@@ -16,6 +16,17 @@ contains
 
   end function qnorm
 
+  !! Return normalized quaternion
+  pure function qnormalize(q) result(r)
+    double precision, intent(in) :: q(4)
+    double precision :: r(4)
+
+    double precision :: n
+
+    n = qnorm(q)
+    r = q/n
+  end function qnormalize
+
   !! Return conjugate quaternion
   pure function qconj(q) result(n)
     double precision, intent(in) :: q(4)
