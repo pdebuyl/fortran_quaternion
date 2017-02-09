@@ -7,6 +7,7 @@ module quaternion
 
 contains
 
+  !! Return the norm of quaternion
   pure function qnorm(q) result(n)
     double precision, intent(in) :: q(4)
     double precision :: n
@@ -15,6 +16,7 @@ contains
 
   end function qnorm
 
+  !! Return conjugate quaternion
   pure function qconj(q) result(n)
     double precision, intent(in) :: q(4)
     double precision :: n(4)
@@ -26,6 +28,7 @@ contains
 
   end function qconj
 
+  !! Return cross product between two 3d vectors
   pure function cross(x1, x2) result(r)
     double precision, intent(in) :: x1(3), x2(3)
     double precision :: r(3)
@@ -36,6 +39,7 @@ contains
 
   end function cross
 
+  !! Return inverse quaterion
   pure function qinv(q) result(n)
     double precision, intent(in) :: q(4)
     double precision :: n(4)
@@ -49,6 +53,7 @@ contains
 
   end function qinv
 
+  !! Return 3d vector resulting from a quaternion-vector multiplication
   pure function qmul_3(q, v) result(r)
     double precision, intent(in) :: q(4)
     double precision, intent(in) :: v(3)
@@ -58,6 +63,7 @@ contains
 
   end function qmul_3
 
+  !! Return the product of two quaternions
   pure function qmul_4(q1, q2) result(r)
     double precision, intent(in) :: q1(4)
     double precision, intent(in) :: q2(4)
