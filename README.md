@@ -1,6 +1,6 @@
 # fortran_quaternion
 
-**Author:** Pierre de Buyl
+**Author:** Pierre de Buyl  
 **License:** 3-clause BSD
 
 `fortran_quaternion` is a Fortran module that provides some basic quaternion functions.
