@@ -65,8 +65,15 @@ program quaternion_rotation
 end program quaternion_rotation
 ~~~
 
+## Installation
+
+Copy the file `src/quaternion.f90` *or* use cmake (with the `add_subdirectory` command) to
+add the library to your project.
 
 ## Tests
 
 Tests are defined in `test/` and rely on
-[fortran_tester](https://github.com/pdebuyl/fortran_tester).
+[fortran_tester](https://github.com/pdebuyl/fortran_tester), installed via git submodules:
+
+    git submodule init
+    git submodule update
