@@ -66,5 +66,5 @@ end program quaternion_rotation
 
 ## Tests
 
-Tests are defined in `test/test_base.f90` and rely on
+Tests are defined in `test/` and rely on
 [fortran_tester](https://github.com/pdebuyl/fortran_tester).
