@@ -8,8 +8,47 @@ module quaternion
   private
 
   public :: qnorm, qnormalize, qconj, qinv, qmul
+  public :: quaternion_to_vector, quaternion_to_scalar, qnew
 
 contains
+
+  !! Construct a new quaternion from the scalar part s and the vector part v
+  pure function qnew(s, v) result(q)
+    double precision, intent(in), optional :: s
+    double precision, intent(in), optional :: v(3)
+    double precision :: q(4)
+
+    if (present(s)) then
+       q(4) = s
+    else
+       q(4) = 0
+    end if
+
+    if (present(v)) then
+       q(1:3) = v
+    else
+       q(1:3) = 0
+    end if
+
+  end function qnew
+
+  !! Return the vector part of a quaternion
+  pure function quaternion_to_vector(q) result(v)
+    double precision, intent(in) :: q(4)
+    double precision :: v(3)
+
+    v = q(1:3)
+
+  end function quaternion_to_vector
+
+  !! Return the scalar part of a quaternion
+  pure function quaternion_to_scalar(q) result(s)
+    double precision, intent(in) :: q(4)
+    double precision :: s
+
+    s = q(4)
+
+  end function quaternion_to_scalar
 
   !! Return the norm of quaternion
   pure function qnorm(q) result(n)

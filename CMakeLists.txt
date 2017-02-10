@@ -13,4 +13,9 @@ add_executable(test_base
 test/test_base.f90)
 target_link_libraries(test_base quaternion fortran_tester)
 
+add_executable(test_conversion
+test/test_conversion.f90)
+target_link_libraries(test_conversion quaternion fortran_tester)
+
 add_test(NAME test_base COMMAND test_base)
+add_test(NAME test_conversion COMMAND test_conversion)
