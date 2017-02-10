@@ -1,0 +1,13 @@
+language: c
+sudo: required
+dist: trusty
+
+install:
+  - sudo apt-get install -y gfortran
+
+script:
+  - mkdir build && cd build
+  - cmake .. -DCMAKE_Fortran_FLAGS='-Wall -Wextra -std=f2008 -pedantic'
+  - make VERBOSE=1
+  - ctest -V
+
