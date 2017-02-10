@@ -3,6 +3,8 @@
 **Author:** Pierre de Buyl  
 **License:** 3-clause BSD
 
+[![Build Status](https://travis-ci.org/pdebuyl/fortran_quaternion.svg?branch=master)](https://travis-ci.org/pdebuyl/fortran_quaternion)
+
 `fortran_quaternion` is a Fortran module that provides some basic quaternion functions.
 
 `fortran_quaternion` does not define any derived type, instead quaternions are provided as
