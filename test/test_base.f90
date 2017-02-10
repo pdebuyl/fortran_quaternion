@@ -18,17 +18,17 @@ program test_base
   q1 = [1, 0, 0, 0]
   q3 = [0, 0, 0, -1]
 
-  call test% assert_close(qmul_4(q1, q1), q3)
+  call test% assert_close(qmul(q1, q1), q3)
 
   q1 = [0, 1, 0, 0]
   q3 = [0, 0, 0, -1]
 
-  call test% assert_close(qmul_4(q1, q1), q3)
+  call test% assert_close(qmul(q1, q1), q3)
 
   q1 = [0, 0, 1, 0]
   q3 = [0, 0, 0, -1]
 
-  call test% assert_close(qmul_4(q1, q1), q3)
+  call test% assert_close(qmul(q1, q1), q3)
 
   write(*,*) 'Testing the basic relations ij=k, ji=-k, etc'
 
@@ -36,37 +36,37 @@ program test_base
   q2 = [0, 1, 0, 0]
   q3 = [0, 0, 1, 0]
 
-  call test% assert_close(qmul_4(q1, q2), q3)
+  call test% assert_close(qmul(q1, q2), q3)
 
   q1 = [0, 1, 0, 0]
   q2 = [0, 0, 1, 0]
   q3 = [1, 0, 0, 0]
 
-  call test% assert_close(qmul_4(q1, q2), q3)
+  call test% assert_close(qmul(q1, q2), q3)
 
   q1 = [0, 0, 1, 0]
   q2 = [1, 0, 0, 0]
   q3 = [0, 1, 0, 0]
 
-  call test% assert_close(qmul_4(q1, q2), q3)
+  call test% assert_close(qmul(q1, q2), q3)
 
   q1 = [1, 0, 0, 0]
   q2 = [0, 0, 1, 0]
   q3 = [0, -1, 0, 0]
 
-  call test% assert_close(qmul_4(q1, q2), q3)
+  call test% assert_close(qmul(q1, q2), q3)
 
   q1 = [0, 1, 0, 0]
   q2 = [1, 0, 0, 0]
   q3 = [0, 0, -1, 0]
 
-  call test% assert_close(qmul_4(q1, q2), q3)
+  call test% assert_close(qmul(q1, q2), q3)
 
   q1 = [0, 0, 1, 0]
   q2 = [0, 1, 0, 0]
   q3 = [-1, 0, 0, 0]
 
-  call test% assert_close(qmul_4(q1, q2), q3)
+  call test% assert_close(qmul(q1, q2), q3)
 
   write(*,*) 'Testing the inverse quaternion'
 
@@ -74,7 +74,7 @@ program test_base
   q2 = qinv(q1)
   q3 = [0, 0, 0, 1]
 
-  call test% assert_close(qmul_4(q1,q2), q3)
+  call test% assert_close(qmul(q1,q2), q3)
 
   write(*,*) 'Testing the other functions of the module'
 

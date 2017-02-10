@@ -75,7 +75,7 @@ contains
   end function qmul_3
 
   !! Return the product of two quaternions
-  pure function qmul_4(q1, q2) result(r)
+  pure function qmul(q1, q2) result(r)
     double precision, intent(in) :: q1(4)
     double precision, intent(in) :: q2(4)
     double precision :: r(4)
@@ -83,6 +83,6 @@ contains
     r(1:3) = q1(4)*q2(1:3) + q2(4)*q1(1:3) + cross(q1(1:3), q2(1:3))
     r(4) = q1(4)*q2(4) - dot_product(q1(1:3), q2(1:3))
 
-  end function qmul_4
+  end function qmul
 
 end module quaternion
