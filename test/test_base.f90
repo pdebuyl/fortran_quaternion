@@ -9,7 +9,6 @@ program test_base
 
   type(tester_t) :: test
   double precision :: q1(4), q2(4), q3(4)
-  double precision :: v1(3), v2(3)
 
   call test%init()
 
