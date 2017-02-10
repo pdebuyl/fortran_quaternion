@@ -91,11 +91,6 @@ program test_base
   q2 = [-2, 0, 0, 1]
   call test% assert_close(qconj(q1), q2)
 
-  q1 = [0, 1, 1, -2]
-  v1 = [1, 2, 3]
-  v2 = -2*v1 + cross(q1(1:3), v1)
-  call test% assert_close(qmul_3(q1, v1), v2)
-
   call test%print()
 
 end program test_base

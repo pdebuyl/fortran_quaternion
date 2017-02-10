@@ -5,6 +5,10 @@
 module quaternion
   implicit none
 
+  private
+
+  public :: qnorm, qnormalize, qconj, qinv, qmul
+
 contains
 
   !! Return the norm of quaternion
@@ -63,16 +67,6 @@ contains
     n = n / dot_product(n, n)
 
   end function qinv
-
-  !! Return 3d vector resulting from a quaternion-vector multiplication
-  pure function qmul_3(q, v) result(r)
-    double precision, intent(in) :: q(4)
-    double precision, intent(in) :: v(3)
-    double precision :: r(3)
-
-    r = q(4)*v + cross(q(1:3), v)
-
-  end function qmul_3
 
   !! Return the product of two quaternions
   pure function qmul(q1, q2) result(r)
