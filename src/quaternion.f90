@@ -9,6 +9,7 @@ module quaternion
 
   public :: qnorm, qnormalize, qconj, qinv, qmul
   public :: qvector, qscalar, qnew
+  public :: qrot
 
   interface qnew
      module procedure qnew_s
@@ -143,5 +144,14 @@ contains
     r(4) = q1(4)*q2(4) - dot_product(q1(1:3), q2(1:3))
 
   end function qmul
+
+  pure function qrot(q, v) result(r)
+    double precision, intent(in) :: q(4)
+    double precision, intent(in) :: v(3)
+    double precision :: r(3)
+
+    r = qvector(qmul(q, qmul(qnew(v=v), qconj(q))))
+
+  end function qrot
 
 end module quaternion

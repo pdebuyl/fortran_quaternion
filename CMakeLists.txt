@@ -17,5 +17,10 @@ add_executable(test_conversion
 test/test_conversion.f90)
 target_link_libraries(test_conversion quaternion fortran_tester)
 
+add_executable(test_rotation
+test/test_rotation.f90)
+target_link_libraries(test_rotation quaternion fortran_tester)
+
 add_test(NAME test_base COMMAND test_base)
 add_test(NAME test_conversion COMMAND test_conversion)
+add_test(NAME test_rotation COMMAND test_rotation)
