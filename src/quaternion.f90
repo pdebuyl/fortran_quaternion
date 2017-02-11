@@ -10,27 +10,44 @@ module quaternion
   public :: qnorm, qnormalize, qconj, qinv, qmul
   public :: qvector, qscalar, qnew
 
+  interface qnew
+     module procedure qnew_s
+     module procedure qnew_v
+     module procedure qnew_sv
+  end interface qnew
+
 contains
 
   !! Construct a new quaternion from the scalar part s and the vector part v
-  pure function qnew(s, v) result(q)
-    double precision, intent(in), optional :: s
-    double precision, intent(in), optional :: v(3)
+  pure function qnew_s(s) result(q)
+    double precision, intent(in) :: s
     double precision :: q(4)
 
-    if (present(s)) then
-       q(4) = s
-    else
-       q(4) = 0
-    end if
+    q(1:3) = 0
+    q(4) = s
 
-    if (present(v)) then
-       q(1:3) = v
-    else
-       q(1:3) = 0
-    end if
+  end function qnew_s
 
-  end function qnew
+  !! Construct a new quaternion from the scalar part s and the vector part v
+  pure function qnew_v(v) result(q)
+    double precision, intent(in) :: v(3)
+    double precision :: q(4)
+
+    q(1:3) = v
+    q(4) = 0
+
+  end function qnew_v
+
+  !! Construct a new quaternion from the scalar part s and the vector part v
+  pure function qnew_sv(s, v) result(q)
+    double precision, intent(in) :: s
+    double precision, intent(in) :: v(3)
+    double precision :: q(4)
+
+    q(1:3) = v
+    q(4) = s
+
+  end function qnew_sv
 
   !! Return the vector part of a quaternion
   pure function qvector(q) result(v)
