@@ -11,8 +11,8 @@
 4-element vectors storing the vector part first and the scalar part last.
 
 - `qnew`: return a quaternion from the scalar and vector input.
-- `quaternion_to_vector`: return the vector part of a quaternion.
-- `quaternion_to_scalar`: return the scalar part of a quaternion.
+- `qvector`: return the vector part of a quaternion.
+- `qscalar`: return the scalar part of a quaternion.
 - `qnorm`: return the norm.
 - `qnormalize`: return the normalized quaternion.
 - `qconj`: return the conjugate.
@@ -59,7 +59,7 @@ program quaternion_rotation
 
   write(*,'(a,3f7.2)') 'v = ', v
   ! Rotate qv by q
-  v = quaternion_to_vector(qmul(q, qmul(qnew(v=v), qconj(q))))
+  v = qvector(qmul(q, qmul(qnew(v=v), qconj(q))))
   write(*,'(a,3f7.2)') 'rotated v = ', v
 
 end program quaternion_rotation

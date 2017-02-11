@@ -18,19 +18,19 @@ program test_base
 
   v = [10, 11, 12]
   q = qnew(v=v)
-  call test% assert_close(v, quaternion_to_vector(q))
-  call test% assert_close(0.d0, quaternion_to_scalar(q))
+  call test% assert_close(v, qvector(q))
+  call test% assert_close(0.d0, qscalar(q))
 
   s = 1.201d0
   q = qnew(s=s)
-  call test% assert_close([0.d0, 0.d0, 0.d0], quaternion_to_vector(q))
-  call test% assert_close(s, quaternion_to_scalar(q))
+  call test% assert_close([0.d0, 0.d0, 0.d0], qvector(q))
+  call test% assert_close(s, qscalar(q))
 
   s = -1234.56d0
   v = [0.d0, 100.d0, 5.d0]
   q = qnew(s=s, v=v)
-  call test% assert_close(v, quaternion_to_vector(q))
-  call test% assert_close(s, quaternion_to_scalar(q))
+  call test% assert_close(v, qvector(q))
+  call test% assert_close(s, qscalar(q))
 
   call test%print()
 

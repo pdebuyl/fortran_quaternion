@@ -8,7 +8,7 @@ module quaternion
   private
 
   public :: qnorm, qnormalize, qconj, qinv, qmul
-  public :: quaternion_to_vector, quaternion_to_scalar, qnew
+  public :: qvector, qscalar, qnew
 
 contains
 
@@ -33,22 +33,22 @@ contains
   end function qnew
 
   !! Return the vector part of a quaternion
-  pure function quaternion_to_vector(q) result(v)
+  pure function qvector(q) result(v)
     double precision, intent(in) :: q(4)
     double precision :: v(3)
 
     v = q(1:3)
 
-  end function quaternion_to_vector
+  end function qvector
 
   !! Return the scalar part of a quaternion
-  pure function quaternion_to_scalar(q) result(s)
+  pure function qscalar(q) result(s)
     double precision, intent(in) :: q(4)
     double precision :: s
 
     s = q(4)
 
-  end function quaternion_to_scalar
+  end function qscalar
 
   !! Return the norm of quaternion
   pure function qnorm(q) result(n)
