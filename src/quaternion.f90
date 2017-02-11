@@ -14,6 +14,7 @@ module quaternion
      module procedure qnew_s
      module procedure qnew_v
      module procedure qnew_sv
+     module procedure qnew_void
   end interface qnew
 
 contains
@@ -48,6 +49,14 @@ contains
     q(4) = s
 
   end function qnew_sv
+
+  !! Construct a new quaternion from the scalar part s and the vector part v
+  pure function qnew_void() result(q)
+    double precision :: q(4)
+
+    q = 0
+
+  end function qnew_void
 
   !! Return the vector part of a quaternion
   pure function qvector(q) result(v)

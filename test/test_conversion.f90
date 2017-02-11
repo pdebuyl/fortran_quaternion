@@ -32,6 +32,12 @@ program test_base
   call test% assert_close(v, qvector(q))
   call test% assert_close(s, qscalar(q))
 
+  s = 0
+  v = 0
+  q = qnew()
+  call test% assert_close(v, qvector(q))
+  call test% assert_close(0.d0, qscalar(q))
+
   call test%print()
 
 end program test_base
