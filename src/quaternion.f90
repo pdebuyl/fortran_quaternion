@@ -145,6 +145,7 @@ contains
 
   end function qmul
 
+  !! Return the vector v rotated by the quaternion q
   pure function qrot(q, v) result(r)
     double precision, intent(in) :: q(4)
     double precision, intent(in) :: v(3)
