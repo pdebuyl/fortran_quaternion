@@ -7,7 +7,7 @@ install:
 
 script:
   - mkdir build && cd build
-  - cmake .. -DCMAKE_Fortran_FLAGS='-Wall -Wextra -std=f2008 -pedantic'
+  - cmake .. -DCMAKE_Fortran_FLAGS='-Wall -Wextra -std=f2008 -pedantic' -DBUILD_TESTING=ON
   - make VERBOSE=1
   - ctest -V
 
